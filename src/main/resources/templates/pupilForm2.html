@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Pupil Form 2</title>
+    <link rel="stylesheet" th:href="@{/css/mystyle.css}"/>
+    <link rel="icon" type="image/jpeg" th:href="@{/css/Bali.jpg}"> <!-- картинка иконки -->
+</head>
+<body>
+<h2>Pupil Form 2</h2>
+<br>
+<form th:action="@{/api/processPupilForm2}" th:object="${pupil}" method="post">
+    First name: <input type="text" th:field="${pupil.firstName}"/> <!-- моно так ,полный путь -->
+    <br>
+    Last name: <input type="text" th:field="*{lastName}"/> <!-- или так через *-->
+    <br><br>
+    Country:
+    <select th:field="*{country}">
+        <!--tempCountry - это переменная, которая будет принимать значения из списка, временная переменная как в цикле for-->
+        <option th:each="tempCountry : ${T(ru.spvrent.springHustonMVC.model.Country).values()}"
+                th:value="${tempCountry}" th:text="${tempCountry.displayName}">Country</option>
+    </select>
+    <br><br>
+    Gender:
+    <label th:each="tempGender : ${T(ru.spvrent.springHustonMVC.model.Gender).values()}">
+        <input type="radio" th:field="*{gender}" th:value="${tempGender}"/>
+        <span th:text="${tempGender.displayName}"></span>
+    </label>
+    <br><br>
+    Car:
+    <label th:each="tempCar : ${T(ru.spvrent.springHustonMVC.model.Car).values()}">
+        <input type="checkbox" th:field="*{car}" th:value="${tempCar}"/>
+        <span th:text="${tempCar.displayName}"></span>
+    </label>
+    <br><br>
+    <input type="submit" value="Submit"/>
+</form>
+</body>
+</html>

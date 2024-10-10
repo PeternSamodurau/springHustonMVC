@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Pupil Form1</title>
+    <link rel="stylesheet" th:href="@{/css/mystyle.css}"/>
+    <link rel="icon" type="image/jpeg" th:href="@{/css/Bali.jpg}"> <!-- картинка иконки -->
+</head>
+<body>
+<h2>Pupil Form1</h2>
+<br>
+<form th:action="@{/api/processPupilForm1}" method="get">
+    <input type="text" name="pupilName" placeholder="Enter your name"/>
+    <input type="submit" value="Submit"/>
+</form>
+</body>
+</html>

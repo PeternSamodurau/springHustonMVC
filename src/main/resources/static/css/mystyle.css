@@ -1,0 +1,10 @@
+.firststyle1 {
+    font-style: inherit;
+    font: caption;
+    color: blue;
+}
+.firststyle2 {
+    font-style: normal;
+    font: caption;
+    color: red;
+}

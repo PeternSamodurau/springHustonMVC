@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Pupil Info 2</title>
+    <link rel="stylesheet" th:href="@{/css/mystyle.css}" />
+    <link rel="icon" type="image/jpeg" th:href="@{/css/Bali.jpg}"> <!-- картинка иконки -->
+</head>
+
+<body>
+<h2 class="firststyle1"> Pupil Info 2 </h2>
+<br>
+<span class="firststyle1">This is the pupil info 2 page</span>
+<br>
+<br>
+The pupil is : <span th:text="${pupil.firstName} + ' ' + ${pupil.lastName}" class="firststyle1"></span>
+<br><br>
+Country: <span th:text="${pupil.country}" class="firststyle2"></span>
+<br><br>
+Gender: <span th:text="${pupil.gender}"class="firststyle2"></span>
+<br><br>
+Car: <span th:text="${pupil.car}" class="firststyle2"></span>
+</body>
+</html>
